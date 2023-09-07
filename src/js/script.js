@@ -47,3 +47,34 @@ document.querySelector('.next').addEventListener('click', function () {
             $('.overlay, #order').fadeIn('slow');
         });
 });
+
+    function validateForm(form) {
+        $(form).validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                phone: 'required',
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                name: {
+                    required: 'Пожалуйста, введите своё имя',
+                    minlength: jQuery.validator.format('Введите не менее {0} символов')
+                },
+                phone: 'Пожалуйста, введите свой номер телефона',
+                email: {
+                    required: 'Пожалуйста, введите свою почту',
+                    email: 'Неправильно введён адрес почты'
+                }
+            }
+        });
+}
+
+    validateForm('#consultation-form');
+    validateForm('#consultation form');
+    validateForm('#order-form');
