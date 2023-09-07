@@ -88,3 +88,5 @@ document.querySelector('.next').addEventListener('click', function () {
             $('.pageup').fadeOut();
         }
     });
+
+    new WOW().init();
